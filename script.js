@@ -58,22 +58,18 @@ var generatePassword = function() {
   if (inclUpper) {
     var index = randomNum(0, (pwdLength - 1));
     pwdArray[index] = getUpper();
-    count++;
   }
   if (inclLower) {
     var index = randomNum(0, (pwdLength - 1));
     pwdArray[index] = getLower();
-    count++;
   }
   if (inclNumber) {
     var index = randomNum(0, (pwdLength - 1));
     pwdArray[index] = getNum();
-    count++;
   }
   if (inclSpecial) {
     var index = randomNum(0, (pwdLength - 1));
     pwdArray[index] = getSpecial();
-    count++;
   }
 
   // fill in the rest of the password with random characters
