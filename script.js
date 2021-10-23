@@ -47,18 +47,59 @@ var generatePassword = function() {
   var inclNumber = window.confirm("Would you like to include numbers?");
   var inclSpecial = window.confirm("Would you like to include special characters?");
 
+  var count = 0;
   //add each of the selected character types
   if (inclUpper) {
     var index = randomNum(0, (pwdLength - 1));
     pwdArray[index] = getUpper();
+    count++;
   }
   if (inclLower) {
     var index = randomNum(0, (pwdLength - 1));
-    pwdLength[index] = getLower();
+    pwdArray[index] = getLower();
+    count++;
   }
   if (inclNumber) {
     var index = randomNum(0, (pwdLength - 1));
-    pwdLength[index] = getNum();
+    pwdArray[index] = getNum();
+    count++;
+  }
+  if (inclSpecial) {
+    var index = randomNum(0, (pwdLength - 1));
+    pwdArray[index] = getSpecial();
+    count++;
+  }
+
+  for (var i = 0; i < pwdLength; i++) {
+    if (!pwdArray[i]) {
+      var rand = randomNum(0, 3);
+      if (rand === 0 &&& inclUpper) {
+        pwdArray[i] = getUpper();
+      }
+      else if (rand === 1 &&& inclLower) {
+        pwdArray[i] = getLower();
+      }
+      else if (rand === 2 && inclNumber) {
+        pwdArray[i] = getNum();
+      }
+      else if (rand === 3 && inclSpecial) {
+        pwdArray[i] = getSpecial();
+      }
+      else {
+        if (inclUpper) {
+          pwdArray[i] = getUpper();
+        }
+        else if (inclLower) {
+          pwdArray[i] = getLower();
+        }
+        else if (inclNumber) {
+          pwdArray[i] = getNum();
+        } else {
+          pwdArray[i] = getSpecial();
+        }
+      }
+
+    }
   }
 };
 
