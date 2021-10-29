@@ -18,3 +18,5 @@ After the user answers the questions from the window alerts, the program uses ra
 
 * Deployed Site: [kerbunker.github.io/Password-Generator/](https://kerbunker.github.io/Password-Generator/)
 * Github repository: [github.com/kerbunker/Password-Generator](https://github.com/kerbunker/Password-Generator)
+
+![screenshot](/assets/images/Capture.PNG)
